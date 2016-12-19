@@ -4,7 +4,7 @@ This is a (empty) canvas for creating React Web Apps with a Node backend and a M
 
 For a full tutorial, that creates a full-working app, refer to [this great blog post](https://www.fullstackreact.com/articles/using-create-react-app-with-a-server/) and their [repository](https://github.com/fullstackreact/food-lookup-demo)
 
-## If you need to install NVM and Node
+## Install NVM and Node
 
 #### NVM
 
@@ -85,7 +85,7 @@ That's what we use create-react-app for:
 create-react-app client
 ```
 
-To test:
+### Test the CLIENT:
 
 ```
 cd client
@@ -94,7 +94,7 @@ npm start
 
 ## Set up the SERVER
 
-###MyWebApp/server.js
+* MyWebApp/server.js
 
 The file is an example of what it may look like for a server that:
 	* Serves at port 3001
@@ -102,11 +102,21 @@ The file is an example of what it may look like for a server that:
 	* Connects to a MySQL pool (pools allow handles reconnecting)
 	* Has a server-api that the client side can talk to
 
-### MyWebApp/package.json
+* MyWebApp/package.json
 
-Contents where borrowed from [this file](https://github.com/fullstackreact/food-lookup-demo/blob/master/package.json).
+Contents where borrowed and slightly modified from [this file](https://github.com/fullstackreact/food-lookup-demo/blob/master/package.json).
+Note: Our local copy depends on MySQL instead of SQLite
 
-
-### MyWebApp/start-client.js
+* MyWebApp/start-client.js
 
 Contents where borrowed from [this file](https://github.com/fullstackreact/food-lookup-demo/blob/master/start-client.js)
+
+## Test the SERVER
+
+Within the top directory
+
+```
+npm install
+npm run server
+```
+
