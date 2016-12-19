@@ -113,10 +113,59 @@ Contents where borrowed from [this file](https://github.com/fullstackreact/food-
 
 ## Test the SERVER
 
+* Minimal testing
+
 Within the top directory
 
 ```
-npm install
+npm install -s
 npm run server
 ```
+
+At this point you should see:
+
+```
+NODE_ENV:  undefined
+Find the server at: http://localhost:3001/
+```
+
+* Testing the database
+
+In the terminal log in as root and used the sammple.sql file included in this repo
+
+```
+mysql -u root
+mysql> source sample.sql
+```
+
+At this point you can test the actual connection to the database. 
+
+Start your server again:
+
+```
+npm run server
+```
+
+Then, submit a query to your db - from another terminal window:
+
+```
+curl localhost:3001/api/books?firstName=William | jq '.'
+```
+
+You should see
+
+```
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    71  100    71    0     0   2257      0 --:--:-- --:--:-- --:--:--  2290
+[
+  {
+    "last_name": "Shakespeare",
+    "first_name": "William",
+    "middle_name": null
+  }
+]
+```
+
+## Connect CLIENT and SERVER
 
