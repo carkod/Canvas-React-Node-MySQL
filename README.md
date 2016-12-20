@@ -16,7 +16,7 @@ brew install nvm
 source $(brew --prefix nvm)/nvm.sh
 ```
 
-Follow directions on screen 
+Follow directions on screen
 
 ```
 You should create NVM's working directory if it doesn't exist:
@@ -40,7 +40,7 @@ upon upgrade/reinstall.
 nvm install node
 ```
 
-Follow any recommendations on screen e.g 
+Follow any recommendations on screen e.g
 
 ```
 nvm use --delete-prefix v6.6.0
@@ -52,13 +52,13 @@ nvm use --delete-prefix v6.6.0
 * Possibly NVM
 
 ```
-brew update 
+brew update
 ```
 
 * Get latest npm
 
 ```
-npm install -g npm@latest 
+npm install -g npm@latest
 ```
 
 * Update global npm packages
@@ -76,21 +76,6 @@ git init
 ...(add readme, commit, set up origin, push)
 ```
 
-
-## Set up the CLIENT
-
-That's what we use create-react-app for:
-
-```
-create-react-app client
-```
-
-### Test the CLIENT:
-
-```
-cd client
-npm start
-```
 
 ## Set up the SERVER
 
@@ -138,7 +123,7 @@ mysql -u root
 mysql> source sample.sql
 ```
 
-At this point you can test the actual connection to the database. 
+At this point you can test the actual connection to the database.
 
 Start your server again:
 
@@ -166,6 +151,63 @@ You should see
   }
 ]
 ```
+## Set up the CLIENT
+
+That's what we use create-react-app for:
+
+```
+create-react-app client
+```
+
+### Test the CLIENT:
+
+```
+cd client
+npm start
+```
+
+### Add Bootstrap
+
+Follow [this instructions](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-bootstrap)
+
+We will
+
+
+### Add React Router
+
+```
+npm install --save react-router
+npm install --save react-router-bootstrap
+```
 
 ## Connect CLIENT and SERVER
 
+The server is ready to receive queries but at this moment, there are no requests sent from the client.
+To do so, we create a client interface
+
+    * client/Client.js
+
+The main function in this file doing the query is
+
+```
+    function search(query) {
+      return fetch(`/api/books?firstName=${query}`, {
+        accept: 'application/json',
+      }).then(checkStatus)
+        .then(parseJSON);
+      }
+```
+
+    * [Bootstrap Table](http://allenfang.github.io/react-bootstrap-table/start.html)
+
+Install module:
+
+```
+npm install react-bootstrap-table --save
+```
+
+Add CSS to public/index.html (inside body)
+```
+<link rel="stylesheet" src="https://npmcdn.com/react-bootstrap-table/dist/react-bootstrap-table.min.css">
+</link>
+```

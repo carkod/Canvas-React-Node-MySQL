@@ -1,21 +1,40 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component, PropTypes } from 'react';
+import { Navbar, Nav, NavItem, Jumbotron, Grid, Row, Col, PageHeader } from 'react-bootstrap';
+import HeaderNavigation from './components/HeaderNavigation'
+
+import './index.css';
+
+
+
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+
+    render() {
+
+        const jumStyle = {
+            backgroundColor: 'rgb(255,2,17)',
+            color:'white'
+        }
+
+        return (
+            <div className='App'>
+            <HeaderNavigation />
+            <div>
+            <Grid>
+            <Row>
+            <Jumbotron style={jumStyle} className='jumbotron'>
+            <h1> Sample App </h1>
+            <p> Brown Center for Biomedical Informatics </p>
+            </Jumbotron>
+            </Row>
+            <Row>
+            {this.props.children}
+            </Row>
+            </Grid>
+            </div>
+            </div>
+        );
+    }
 }
 
 export default App;

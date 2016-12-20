@@ -3,3 +3,24 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.App {
+  margin-top: 5em;
+}
+
+#author-search {
+  margin-top: 5em;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+
+}
+.navbar-brand>img {
+  padding: 5px 5px 5px 0px;
+  height: 60px
+}
+.navbar-inner {
+    min-height: 70px;
+}
