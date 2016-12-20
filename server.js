@@ -32,13 +32,15 @@ const pool = mysql.createPool({
 
 const COLUMNS = [
   'last_name',
-  'first_name',
-  'middle_name'
+  'first_name'
 ];
 
 app.get('/api/books', (req, res) => {
 
   const firstName = req.query.firstName;
+
+  console.log("Querying backend*************");
+  console.log(firstName);
 
   if (!firstName) {
     res.json({
@@ -47,9 +49,9 @@ app.get('/api/books', (req, res) => {
     return;
   }
 
-  console.log(firstName);
 
-  var queryString = `SELECT * from authors WHERE first_name='${firstName}'`
+
+  var queryString = `SELECT * from authors WHERE first_name REGEXP '^${firstName}'`
 
   pool.query(queryString,
          function(err, rows, fields) {

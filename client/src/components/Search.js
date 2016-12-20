@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Client from '../Client';
 import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
 import {Form, FormGroup, FormControl, Button} from 'react-bootstrap'
+import { connect } from 'react-redux'
 
 const products = [];
 
@@ -33,27 +34,80 @@ const options = {
 };
 
 class Search extends React.Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      selectedFoods: [],
+    };
+
+    this.onChange = this.onChange.bind(this)
+    this.onClear = this.onClear.bind(this)
+  }
+  onChange(e)
+  {
+    console.log("Change: ", e.target.value );
+    this.props.fetchData({firstName: e.target.value})
+  }
+
+  onClear(e)
+  {
+    console.log("Clear");
+  }
   render() {
 
-    return (
+    console.log(this.props.searchData);
+
+    if( this.props.searchData.length !== 0){
+      return (
         <div>
-            <Form inline>
-            <FormGroup controlId="formInlineEmail">
-              <FormControl type="text" placeholder="Last Name" />
-            </FormGroup>
-            {' '}
-            <Button type="submit" onClick={ this.handleClearBtnClick }>
-              Clear
-            </Button>
-            </Form>
-              <BootstrapTable data={ products } search={ false } options={ options }>
-                  <TableHeaderColumn dataField='id' isKey={ true }>Product ID</TableHeaderColumn>
-                  <TableHeaderColumn dataField='name' >Product Name</TableHeaderColumn>
-                  <TableHeaderColumn dataField='price' searchable={ false }>Product Price</TableHeaderColumn>
-              </BootstrapTable>
-      </div>
-    );
+        <Form inline>
+        <FormGroup controlId="formInlineEmail">
+        <FormControl type="text" placeholder="Last Name"  onKeyUp={this.onChange}/>
+        </FormGroup>
+        {' '}
+        <Button type="submit" onClick={ this.onClear }>
+        Clear
+        </Button>
+        </Form>
+        <BootstrapTable data={ this.props.searchData } search={ false } options={ options }>
+        <TableHeaderColumn dataField='first_name'>First Name</TableHeaderColumn>
+        <TableHeaderColumn dataField='last_name'isKey={ true } >Last Name</TableHeaderColumn>
+        </BootstrapTable>
+        </div>
+      );
+    }else{
+      return (
+        <div>
+        <Form inline>
+        <FormGroup controlId="formInlineEmail">
+        <FormControl type="text" placeholder="Last Name"  onKeyUp={this.onChange}/>
+        </FormGroup>
+        {' '}
+        <Button type="submit" onClick={ this.onClear }>
+        Clear
+        </Button>
+        </Form>
+        </div>
+      );
+    }
   }
 }
 
-export default Search
+function mapStatetoProps(state){
+  return {
+    searchData: state.searchData
+  }
+}
+
+
+function mapDispatchToProps(dispatch){
+  return {
+    fetchData: firstName => dispatch({type: 'FETCH_SEARCH_DATA', payload:firstName}),
+  }
+}
+
+const ConnectedSearch = connect(mapStatetoProps, mapDispatchToProps)(Search)
+
+export default ConnectedSearch

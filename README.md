@@ -159,25 +159,36 @@ That's what we use create-react-app for:
 create-react-app client
 ```
 
-### Test the CLIENT:
+### Test the CLIENT (bare-bones):
 
 ```
 cd client
 npm start
 ```
 
-### Add Bootstrap
+### Add Bootstrap, React Router, Redux and Redux-Saga
 
-Follow [this instructions](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-bootstrap)
+For Bootstrap follow [this instructions](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-bootstrap)
 
 We will
 
-
-### Add React Router
+React-Router hadles routing in our single-page application on the client side
 
 ```
 npm install --save react-router
 npm install --save react-router-bootstrap
+```
+
+Redux handles our Application (global) state
+
+```
+npm install --save react-redux
+```
+
+Redux-Saga handles waiting for our asychronous calls (similar to promises)
+
+```
+npm install --save redux-saga
 ```
 
 ## Connect CLIENT and SERVER
