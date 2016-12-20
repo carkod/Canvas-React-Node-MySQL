@@ -39,9 +39,6 @@ app.get('/api/books', (req, res) => {
 
   const firstName = req.query.firstName;
 
-  console.log("Querying backend*************");
-  console.log(firstName);
-
   if (!firstName) {
     res.json({
       error: 'Missing required parameters',
@@ -49,15 +46,17 @@ app.get('/api/books', (req, res) => {
     return;
   }
 
-
-
-  var queryString = `SELECT * from authors WHERE first_name REGEXP '^${firstName}'`
+  let queryString = ``;
+  if(firstName=="*"){
+    queryString = `SELECT * from authors`
+  }else{
+     queryString = `SELECT * from authors WHERE first_name REGEXP '^${firstName}'`
+  }
 
   pool.query(queryString,
          function(err, rows, fields) {
           if (err) throw err;
 
-          console.log(rows);
           if (rows.length > 0){
             res.json(
               rows.map((entry) => {

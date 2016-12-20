@@ -8,19 +8,19 @@ class HeaderNavigation extends Component{
 
   render(){
     return(
-      <Navbar fixedTop toggleNavKey={0}>
+      <Navbar fixedTop>
       <Navbar.Header>
       <LinkContainer to='/'>
         <Navbar.Brand>
-        <a href="#">
-        <img src={logo} />
+        <a href="/">
+        <img alt="" src={logo} />
         </a>
         </Navbar.Brand>
         </LinkContainer>
         <Navbar.Toggle />
       </Navbar.Header>
         <Navbar.Collapse>
-        <Nav pullright>
+        <Nav>
         <LinkContainer to='/search'>
           <NavItem eventKey={1} >Database Search </NavItem>
         </LinkContainer>

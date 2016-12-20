@@ -1,6 +1,5 @@
 import { takeEvery } from 'redux-saga'
-import { call, put, fork } from 'redux-saga/effects'
-import {delay} from 'redux-saga'
+import { call, put } from 'redux-saga/effects'
 import Client from './Client';
 import * as Actions from './Actions'
 

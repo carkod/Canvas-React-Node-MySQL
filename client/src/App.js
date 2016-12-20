@@ -1,5 +1,5 @@
-import React, { Component, PropTypes } from 'react';
-import { Navbar, Nav, NavItem, Jumbotron, Grid, Row, Col, PageHeader } from 'react-bootstrap';
+import React, { Component } from 'react';
+import { Jumbotron, Grid, Row } from 'react-bootstrap';
 import HeaderNavigation from './components/HeaderNavigation'
 
 import './index.css';
