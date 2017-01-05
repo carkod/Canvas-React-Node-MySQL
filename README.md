@@ -10,6 +10,7 @@ This is a fully working canvas for a React Web App with the following characteri
 * ReactBootstrap for UI
 * Redux-Saga for asynchronous tasks
 
+![picture alt](https://github.com/bcbi/Canvas-React-Node-MySQL/blob/master/screen-shot.png)
 
 ## Getting this App up and running
 
