@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom'
 import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
 import {Form, FormGroup, FormControl, Button} from 'react-bootstrap'
 import { connect } from 'react-redux'
@@ -10,12 +11,10 @@ class Search extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      selectedFoods: [],
-    };
-
     this.onChange = this.onChange.bind(this)
     this.onClear = this.onClear.bind(this)
+    this.onSubmit = this.onSubmit.bind(this)
+
   }
   onChange(e)
   {
@@ -29,7 +28,16 @@ class Search extends Component {
 
   onClear(e)
   {
-    console.log("Clear");
+    let searchInput = ReactDOM.findDOMNode(this.refs.searchInput)
+    searchInput.value=""
+    this.props.fetchData({firstName: "*"})
+
+  }
+
+  onSubmit(e)
+  {
+    //prevents full page reload
+    e.preventDefault();
   }
 
   renderTitleAndForm(){
@@ -40,13 +48,18 @@ class Search extends Component {
       </Row>
       <Row className="show-grid">
         <Col md={4}>
-          <Form horizontal>
+          <Form horizontal onSubmit={this.onSubmit}>
           <FormGroup controlId="formInlineEmail">
              <Col   smOffset={3} sm={4}>
-              <FormControl type="text" placeholder="First Name"  onChange={this.onChange}/>
+              <FormControl
+               ref="searchInput"
+               type="text"
+               placeholder="First Name"
+               onChange={this.onChange}
+               />
              </Col>
              <Col  sm={2}>
-               <Button type="submit" onClick={ this.onClear }>
+               <Button type="button" onClick={ this.onClear }>
                  Clear
                </Button>
              </Col>
@@ -68,13 +81,17 @@ class Search extends Component {
       </Row>
       <Row className="show-grid">
         <Col md={4}>
-          <Form horizontal>
+          <Form horizontal onSubmit={this.onSubmit}>
           <FormGroup controlId="formInlineEmail">
              <Col   smOffset={3} sm={4}>
-              <FormControl type="text" placeholder="First Name"  onChange={this.onChange}/>
+              <FormControl
+              type="text"
+              placeholder="First Name"
+              onChange={this.onChange}
+              />
              </Col>
              <Col  sm={2}>
-               <Button type="submit" onClick={ this.onClear }>
+               <Button type="button" onClick={ this.onClear }>
                  Clear
                </Button>
              </Col>
