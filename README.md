@@ -16,45 +16,52 @@ This app was initially based on [this great blog post](https://www.fullstackreac
 ## Getting this App up and running
 
 1. First of all [Install or update NVM and Node (if you haven't done so)](#install-or-update-nvm-and-node) (if you haven't done so)
+
 2. Clone this repository:
-```
-git clone https://github.com/bcbi/Canvas-React-Node-MySQL.git MyWebApp
-```
+
+ ```
+ git clone https://github.com/bcbi/Canvas-React-Node-MySQL.git MyWebApp
+ ```
+
 3. Set up testing database
-In the terminal log in as root and used the sample.sql file included in this repo
-```
-mysql -u root
-mysql> source sample.sql;
-```
-At this point you can test the actual connection to the database.
-```
-mysql> use books;
-mysql> show tables;
-```
-You should get:
-```
-+-----------------+
-| Tables_in_books |
-+-----------------+
-| authors         |
-+-----------------+
-1 row in set (0.00 sec)
-```
+
+ In the terminal log in as root and used the sample.sql file included in this repo
+ ```
+ mysql -u root
+ mysql> source sample.sql;
+ ```
+ 
+ At this point you can test the actual connection to the database.
+ ```
+ mysql> use books;
+ mysql> show tables;
+ ```
+ You should get:
+ ```
+ +-----------------+
+ | Tables_in_books |
+ +-----------------+
+ | authors         |
+ +-----------------+
+ 1 row in set (0.00 sec)
+ ```
+
 4. Install server and client packages
-```
-cd YOUR_PATH/MyWebApp
-npm install
-cd client
-npm install
-```
+ ```
+ cd YOUR_PATH/MyWebApp
+ npm install
+ cd client
+ npm install
+ ```
+
 5. Start both server and client
-```
-cd YOUR_PATH/MyWebApp
-npm start
-```
-The last lines of the output should be
-```
-Starting the development server...
+ ```
+ cd YOUR_PATH/MyWebApp
+ npm start
+ ```
+ The last lines of the output should be
+ ```
+ Starting the development server... 
 
  Compiled successfully!
 
@@ -64,8 +71,8 @@ Starting the development server...
 
  Note that the development build is not optimized.
  To create a production build, use npm run build.
-```
-You can now point your browser to http://localhost:3000/!
+ ```
+ You can now point your browser to http://localhost:3000/!
 
 
 If you are curious how to re-create this app from scratch, [we've documented most of the steps](#starting-from-scratch)
