@@ -13,7 +13,7 @@ This is a fully working canvas for a React Web App with the following characteri
 
 ## Getting this App up and running
 
-1. First of all [Install or update NVM and Node (if you haven't done so)](#install-or-update-nvm-and-node) (if you haven't done so)
+1. First of all [Install or update NVM and Node](#install-or-update-nvm-and-node) (if you haven't done so)
 
 2. Clone this repository:
 
