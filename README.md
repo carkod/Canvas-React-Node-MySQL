@@ -65,8 +65,10 @@ Starting the development server...
  Note that the development build is not optimized.
  To create a production build, use npm run build.
 ```
-
 You can now point your browser to http://localhost:3000/!
+
+
+If you are curious how to re-create this app from scratch, [we've documented most of the steps](#If you want to start from scratch, this were our steps)
 
 ## Install or update NVM and Node (if you haven't done so)
 
@@ -232,30 +234,6 @@ cd client
 npm start
 ```
 
-#### Add Bootstrap, React Router, Redux and Redux-Saga
-
-For Bootstrap follow [this instructions](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-bootstrap)
-
-We will
-
-React-Router hadles routing in our single-page application on the client side
-
-```
-npm install --save react-router
-npm install --save react-router-bootstrap
-```
-
-Redux handles our Application (global) state
-
-```
-npm install --save react-redux
-```
-
-Redux-Saga handles waiting for our asychronous calls (similar to promises)
-
-```
-npm install --save redux-saga
-```
 
 ### Connect CLIENT and SERVER
 
@@ -287,4 +265,31 @@ Add CSS to public/index.html (inside body)
 ```
 <link rel="stylesheet" src="https://npmcdn.com/react-bootstrap-table/dist/react-bootstrap-table.min.css">
 </link>
+```
+
+### Add the proxy
+
+#### Add Bootstrap, React Router, Redux and Redux-Saga
+
+For Bootstrap follow [this instructions](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-bootstrap)
+
+We will
+
+React-Router hadles routing in our single-page application on the client side
+
+```
+npm install --save react-router
+npm install --save react-router-bootstrap
+```
+
+Redux handles our Application (global) state
+
+```
+npm install --save react-redux
+```
+
+Redux-Saga handles waiting for our asychronous calls (similar to promises)
+
+```
+npm install --save redux-saga
 ```
