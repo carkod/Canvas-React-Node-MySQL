@@ -70,7 +70,7 @@ You can now point your browser to http://localhost:3000/!
 
 If you are curious how to re-create this app from scratch, [we've documented most of the steps](#Starting-from-scratch)
 
-## Install or update NVM and Node
+(##Install-or-update-NVM-and-Node)
 
 #### NVM
 
