@@ -276,7 +276,13 @@ Add CSS to public/index.html (inside body)
 
 ### Add the proxy
 
-#### Add Bootstrap, React Router, Redux and Redux-Saga
+We need Webpack development server proxy our API requests to our API server
+```
+// Inside client/package.json
+"proxy": "http://localhost:3001/",
+```
+
+### Add Bootstrap, React Router, Redux and Redux-Saga
 
 For Bootstrap follow [this instructions](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-bootstrap)
 
