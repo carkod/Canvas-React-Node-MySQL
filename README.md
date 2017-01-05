@@ -1,10 +1,74 @@
-# Canvas-React-Node-MySQL
+# Canvas Web App for React-Node-MySQL
 
-This is a (empty) canvas for creating React Web Apps with a Node backend and a MySQL connection
+This is a fully working canvas for a React Web App with the following characteristics:
 
-For a full tutorial, that creates a full-working app, refer to [this great blog post](https://www.fullstackreact.com/articles/using-create-react-app-with-a-server/) and their [repository](https://github.com/fullstackreact/food-lookup-demo)
+* Based on create-react-app
+* Node/Express backend
+* MySQL connection
+* Redux pattern for handling application-state
+* ReactRouter for handling routes
+* ReactBootstrap for UI
+* Redux-Saga for asynchronous tasks
 
-## Install NVM and Node
+
+This app was initially based on [this great blog post](https://www.fullstackreact.com/articles/using-create-react-app-with-a-server/) and their [repository](https://github.com/fullstackreact/food-lookup-demo)
+
+## Getting this App up and running
+
+1. First of all [Install or update NVM and Node (if you haven't done so)](#)
+2. Clone this repository:
+```
+git clone https://github.com/bcbi/Canvas-React-Node-MySQL.git MyWebApp
+```
+3. Set up testing database
+In the terminal log in as root and used the sample.sql file included in this repo
+```
+mysql -u root
+mysql> source sample.sql;
+```
+At this point you can test the actual connection to the database.
+```
+mysql> use books;
+mysql> show tables;
+```
+You should get:
+```
++-----------------+
+| Tables_in_books |
++-----------------+
+| authors         |
++-----------------+
+1 row in set (0.00 sec)
+```
+4. Install server and client packages
+```
+cd YOUR_PATH/MyWebApp
+npm install
+cd client
+npm install
+```
+5. Start both server and client
+```
+cd YOUR_PATH/MyWebApp
+npm start
+```
+The last lines of the output should be
+```
+Starting the development server...
+
+ Compiled successfully!
+
+ The app is running at:
+
+   http://localhost:3000/
+
+ Note that the development build is not optimized.
+ To create a production build, use npm run build.
+```
+
+You can now point your browser to http://localhost:3000/!
+
+## Install or update NVM and Node (if you haven't done so)
 
 #### NVM
 
@@ -47,7 +111,7 @@ nvm use --delete-prefix v6.6.0
 ```
 
 
-## If your enviroment is not up-to-date
+### If your enviroment is not up-to-date
 
 * Possibly NVM
 
@@ -67,6 +131,8 @@ npm install -g npm@latest
 npm update -g
 ```
 
+## If you want to start from scratch, this were our steps
+
 ## Create your App folder, init repo
 
 ```
@@ -77,7 +143,7 @@ git init
 ```
 
 
-## Set up the SERVER
+### Set up the SERVER
 
 * MyWebApp/server.js
 
@@ -96,7 +162,7 @@ Note: Our local copy depends on MySQL instead of SQLite
 
 Contents where borrowed from [this file](https://github.com/fullstackreact/food-lookup-demo/blob/master/start-client.js)
 
-## Test the SERVER
+### Test the SERVER
 
 * Minimal testing
 
@@ -116,7 +182,7 @@ Find the server at: http://localhost:3001/
 
 * Testing the database
 
-In the terminal log in as root and used the sammple.sql file included in this repo
+In the terminal log in as root and used the sample.sql file included in this repo
 
 ```
 mysql -u root
@@ -151,7 +217,7 @@ You should see
   }
 ]
 ```
-## Set up the CLIENT
+### Set up the CLIENT
 
 That's what we use create-react-app for:
 
@@ -159,14 +225,14 @@ That's what we use create-react-app for:
 create-react-app client
 ```
 
-### Test the CLIENT (bare-bones):
+#### Test the CLIENT (bare-bones):
 
 ```
 cd client
 npm start
 ```
 
-### Add Bootstrap, React Router, Redux and Redux-Saga
+#### Add Bootstrap, React Router, Redux and Redux-Saga
 
 For Bootstrap follow [this instructions](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-bootstrap)
 
@@ -191,7 +257,7 @@ Redux-Saga handles waiting for our asychronous calls (similar to promises)
 npm install --save redux-saga
 ```
 
-## Connect CLIENT and SERVER
+### Connect CLIENT and SERVER
 
 The server is ready to receive queries but at this moment, there are no requests sent from the client.
 To do so, we create a client interface
