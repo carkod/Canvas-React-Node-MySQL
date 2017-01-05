@@ -11,8 +11,6 @@ This is a fully working canvas for a React Web App with the following characteri
 * Redux-Saga for asynchronous tasks
 
 
-This app was initially based on [this great blog post](https://www.fullstackreact.com/articles/using-create-react-app-with-a-server/) and their [repository](https://github.com/fullstackreact/food-lookup-demo)
-
 ## Getting this App up and running
 
 1. First of all [Install or update NVM and Node (if you haven't done so)](#install-or-update-nvm-and-node) (if you haven't done so)
@@ -75,7 +73,8 @@ This app was initially based on [this great blog post](https://www.fullstackreac
  You can now point your browser to http://localhost:3000/!
 
 
-If you are curious how to re-create this app from scratch, [we've documented most of the steps](#starting-from-scratch)
+If you are interested on re-creating this app from scratch, [we've documented most of the steps](#starting-from-scratch).
+This app was initially based on [this great blog post](https://www.fullstackreact.com/articles/using-create-react-app-with-a-server/) and their [repository](https://github.com/fullstackreact/food-lookup-demo). It may be a good idea to follow that post first, before tackling ours -  which adds more features e.g., redux, sagas, routes...
 
 ##Install or update NVM and Node
 
