@@ -16,7 +16,6 @@
     "express": "4.13.3",
     "fs": "0.0.2",
     "mysql": "^2.11.1",
-    "react-bootstrap": "^0.30.7"
   },
   "scripts": {
     "start": "concurrently \"npm run server\" \"npm run client\"",
