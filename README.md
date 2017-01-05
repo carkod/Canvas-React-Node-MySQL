@@ -139,7 +139,7 @@ npm install -g npm@latest
 npm update -g
 ```
 
-## Starting-from-scratch
+## Starting from scratch
 
 ## Create your App folder, init repo
 
