@@ -15,7 +15,7 @@ This app was initially based on [this great blog post](https://www.fullstackreac
 
 ## Getting this App up and running
 
-1. First of all [Install or update NVM and Node (if you haven't done so)](#)
+1. First of all [Install or update NVM and Node (if you haven't done so)](#Install-or-update-NVM-and-Node) (if you haven't done so)
 2. Clone this repository:
 ```
 git clone https://github.com/bcbi/Canvas-React-Node-MySQL.git MyWebApp
@@ -68,9 +68,9 @@ Starting the development server...
 You can now point your browser to http://localhost:3000/!
 
 
-If you are curious how to re-create this app from scratch, [we've documented most of the steps](#If you want to start from scratch, this were our steps)
+If you are curious how to re-create this app from scratch, [we've documented most of the steps](#Starting-from-scratch)
 
-## Install or update NVM and Node (if you haven't done so)
+## Install or update NVM and Node
 
 #### NVM
 
@@ -133,7 +133,7 @@ npm install -g npm@latest
 npm update -g
 ```
 
-## If you want to start from scratch, this were our steps
+## Starting-from-scratch
 
 ## Create your App folder, init repo
 
